@@ -20,13 +20,22 @@ const App = (): ReactElement => {
   const [selectedLocationId, setSelectedLocationId] = useState<string | null>(null);
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
 
-  const aboutIntro = "Welcome and I am happy that you found my page! I am ";
+  const aboutIntro = "Warm welcome!\nI am glad you found my page, I am ";
   const aboutName = "Max Andersson";
   const aboutRole = "Software and Machine Learning Engineer";
   const aboutBody = [
-    "I am a software and machine learning engineer with a passion for building scalable and efficient systems.",
-    "I am currently working as a software engineer at",
-  ].join(" ");
+    `
+    Building innovative, efficient, high-performance software solutions! 
+
+    Currently developing DAQ systems and end-to-end analysis pipelines at CERN, focusing on scalability, optimisation and automation. Always happy to connect!   
+    `].join(" ");
+    
+    
+  //   """I am a software and machine learning engineer with a passion for building scalable and efficient systems.
+  //   d
+  //   """
+  //   "I am currently working as a software engineer at",
+  // ].join(" ");
 
   const [aboutShouldFade, setAboutShouldFade] = useState<boolean>(true);
 
@@ -85,7 +94,7 @@ const App = (): ReactElement => {
 
       <main className="content">
         {activeSection === "about" && (
-          <section id="about" className="section">
+          <section id="about" className="section section--centered">
             <p className="about">
               <span className={`about-text${aboutShouldFade ? " about-fade about-fade--1" : ""}`}>{aboutIntro}</span>
               <span className={`about-name${aboutShouldFade ? " about-fade about-fade--2" : ""}`}>{aboutName}</span>
