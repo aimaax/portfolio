@@ -7,7 +7,7 @@ import { PortfolioCard } from "./components/PortfolioCard";
 import { PortfolioGallery } from "./components/PortfolioGallery";
 import { ProjectCard } from "./components/ProjectCard";
 import { ProjectDetail } from "./components/ProjectDetail";
-import { portfolioLocations } from "./data/portfolio";
+import { portfolioLocations } from "./data/photoPortfolio";
 import { projects } from "./data/project";
 
 /**
@@ -142,14 +142,14 @@ const App = (): ReactElement => {
             <div className="cv__container">
               <iframe
                 className="cv__pdf"
-                src="/CV_Max_Andersson_.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                src="CV_Max_Andersson_.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
                 title="CV PDF"
               />
             </div>
             <div className="cv__download-container">
               <a
                 className="cv__download-btn"
-                href="/CV_Max_Andersson_.pdf"
+                href="CV_Max_Andersson_.pdf"
                 download
               >
                 Download CV

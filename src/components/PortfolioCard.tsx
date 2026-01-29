@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import type { PortfolioLocation } from "../types/portfolio";
+import type { PortfolioLocation } from "../types/photoPortfolio";
 
 type PortfolioCardProps = {
   item: PortfolioLocation;

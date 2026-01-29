@@ -1,4 +1,4 @@
-import type { PortfolioLocation } from "../types/portfolio";
+import type { PortfolioLocation } from "../types/photoPortfolio";
 
 export const portfolioLocations: PortfolioLocation[] = [
   {

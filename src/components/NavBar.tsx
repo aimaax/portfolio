@@ -24,7 +24,7 @@ export const NavBar = ({ onNavigate, activeSection }: NavBarProps): ReactElement
   return (
     <header className="nav">
       {/* Logo on the far left */}
-      <img className="nav__logo" src="/Logo.jpg" alt="Max Andersson logo" />
+      <img className="nav__logo" src="Logo.jpg" alt="Max Andersson logo" />
 
       {/* Links centered */}
       <nav className="nav__links">
@@ -64,7 +64,7 @@ export const NavBar = ({ onNavigate, activeSection }: NavBarProps): ReactElement
         >
           <img
             className="nav__linkedin-icon"
-            src="/LinkedIn_icon.png"
+            src="LinkedIn_icon.png"
             alt="LinkedIn profile"
           />
         </a>

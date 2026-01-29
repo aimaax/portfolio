@@ -15,7 +15,7 @@ export const projects: Project[] = [
         subtitle: "Dark Matter signals at the Large Hadron Collider with Deep Learning",
         abstract: "",
         pdfPath: "projects/Bachelor_Thesis_Dark_Matter_Signals.pdf",
-        publicationUrl: "https://uu.diva-portal.org/smash/record.jsf?pid=diva2%3A1769684",
+        publicationUrl: "https://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-505128",
     },
     {
         id: "uncertainty-asymmetric",
