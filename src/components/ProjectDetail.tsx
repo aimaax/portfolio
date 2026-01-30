@@ -12,7 +12,7 @@ export const ProjectDetail = ({ project, onBack }: ProjectDetailProps): ReactEle
   <div className="project-detail">
     <div className="project-detail__header">
       <button type="button" className="project-detail__back" onClick={onBack}>
-        ← Back to projects
+        Back to projects
       </button>
 
       <h2 className="project-detail__title">

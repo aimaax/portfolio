@@ -45,7 +45,7 @@ export const NavBar = ({ onNavigate, activeSection }: NavBarProps): ReactElement
 
       {/* CV and LinkedIn Icon */}
       <div className="nav__right">
-        {}
+        { }
         {activeSection === "cv" ? (
           <a
             className="nav__cta nav__cta--active"
@@ -67,6 +67,7 @@ export const NavBar = ({ onNavigate, activeSection }: NavBarProps): ReactElement
           </a>
         )}
 
+
         <a
           className="nav__linkedin"
           href="https://www.linkedin.com/in/maxandersson314/"
@@ -77,6 +78,18 @@ export const NavBar = ({ onNavigate, activeSection }: NavBarProps): ReactElement
             className="nav__linkedin-icon"
             src="logos/LinkedIn_icon.png"
             alt="LinkedIn profile"
+          />
+        </a>
+        {/* Email icon link */}
+        <a
+          className="nav__email"
+          href="mailto:maxandersson8@outlook.com"
+          aria-label="Send email"
+        >
+          <img
+            className="nav__email-icon"
+            src="logos/email_icon.png"
+            alt="Email"
           />
         </a>
       </div>
