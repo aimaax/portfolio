@@ -3,7 +3,7 @@ import type { ReactElement } from "react";
 
 type NavItem = {
   id: "about" | "projects" | "portfolio";
-  label: "About Me" | "Publications/Projects" | "Photo Portfolio";
+  label: "About Me" | "Publications" | "Photo Portfolio";
 };
 
 type NavBarProps = {
@@ -17,7 +17,7 @@ type NavBarProps = {
 export const NavBar = ({ onNavigate, activeSection }: NavBarProps): ReactElement => {
   const items: NavItem[] = [
     { id: "about", label: "About Me" },
-    { id: "projects", label: "Publications/Projects" },
+    { id: "projects", label: "Publications" },
     { id: "portfolio", label: "Photo Portfolio" },
   ];
 
@@ -63,7 +63,7 @@ export const NavBar = ({ onNavigate, activeSection }: NavBarProps): ReactElement
               onNavigate("cv");
             }}
           >
-            Showcase CV
+            Display CV
           </a>
         )}
 

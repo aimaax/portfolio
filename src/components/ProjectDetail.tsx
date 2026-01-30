@@ -12,7 +12,7 @@ export const ProjectDetail = ({ project, onBack }: ProjectDetailProps): ReactEle
   <div className="project-detail">
     <div className="project-detail__header">
       <button type="button" className="project-detail__back" onClick={onBack}>
-        Back to projects
+        Back
       </button>
 
       <h2 className="project-detail__title">
@@ -35,7 +35,7 @@ export const ProjectDetail = ({ project, onBack }: ProjectDetailProps): ReactEle
         href={project.pdfPath}
         download
       >
-        Download Project
+        Download
       </a>
     </div>
     <div className="project-detail__abstract">

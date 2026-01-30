@@ -53,7 +53,7 @@ export const PortfolioGallery = ({ item, onBack }: PortfolioGalleryProps): React
     <div className="portfolio-gallery">
       <div className="portfolio-gallery__header">
         <button type="button" className="portfolio-gallery__back" onClick={onBack}>
-          Back to portfolio
+          Back
         </button>
         <h2 className="portfolio-gallery__title">{item.location}</h2>
       </div>
