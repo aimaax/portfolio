@@ -28,7 +28,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 0.25rem 2rem;
+  padding: 0.25rem clamp(0.5rem, 2vw, 2rem);
   background: var(--color-bg);
   border-bottom: 1px solid #e5e7eb;
   position: relative;
@@ -43,17 +43,19 @@ body {
 
 .nav__links {
   display: flex;
-  gap: 3.125rem;
+  gap: clamp(0.5rem, 3vw, 3.125rem);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  flex-wrap: nowrap;
 }
 
 .nav__link {
   text-decoration: none;
   color: var(--color-text);
   font-weight: 600;
-  font-size: clamp(0.6rem, 2.5vw, 1.2rem);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  white-space: nowrap;
 }
 
 .nav__link--active {
@@ -144,7 +146,7 @@ body {
 
 .about-text {
   display: block;
-  font-size: clamp(0.6rem, 2vw, 1.3rem);
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
   font-weight: 400;
   color: #000000;
   opacity: 0.8;
@@ -157,7 +159,7 @@ body {
 
 .about-name {
   display: block;
-  font-size: clamp(1.2rem, 8vw, 6rem);
+  font-size: clamp(4rem, 8vw, 6rem);
   font-weight: 700;
   color: #000000;
   margin-bottom: 0rem;
@@ -165,11 +167,14 @@ body {
 
 .about-title {
   display: block;
-  font-size: clamp(0.8rem, 3vw, 1.8rem);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-weight: 600;
   color: var(--color-text);
   opacity: 0.9;
   margin-bottom: 0.5rem;
+  white-space: pre-line;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .about-fade {
@@ -280,13 +285,12 @@ body {
 }
 
 .portfolio-card__location {
-  font-family: cursive;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   color: #ffffff;
-  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
 }
 
@@ -302,7 +306,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   margin-top: 1rem;
   width: 100%;
   min-height: 2.5rem;
@@ -310,14 +314,24 @@ body {
 
 .portfolio-gallery__back {
   flex-shrink: 0;
-  padding: 0.5rem 0;
-  background: none;
+  text-decoration: none;
+  background: #6c757d;  
+  color: #ffffff;
+  padding: 0.625rem 1rem;
+  border-radius: 0.75rem;
   border: none;
-  color: var(--color-primary);
   cursor: pointer;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
   font-weight: 450;
+  line-height: 1;
+  height: clamp(1rem, 5vw, 2.5rem);
+  display: inline-flex;
+  align-items: center;
   z-index: 1;
+}
+
+.portfolio-gallery__back:hover {
+  background: #5a6268;
 }
 
 .portfolio-gallery__title {
@@ -326,9 +340,8 @@ body {
   right: 0;
   margin: 0;
   text-align: center;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 600;
-  font-family: cursive;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 700;
   color: #000;
   pointer-events: none;
 }
@@ -447,18 +460,23 @@ body {
 
 /* Projects */
 .project-section {
-  max-width: none !important;
+  max-width: 75rem !important;
   width: 100%;
 }
 
 .project-title__main {
-  text-decoration: underline;
+  font-weight: 700;
+  text-decoration: underline; 
+}
+
+.project-card .project-title__main {
+  text-decoration: none;  
 }
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(clamp(100px, 50vw, 300px), 100%), 1fr));
+  gap: clamp(0.5rem, 2vw, 1.5rem);
   width: 100%;
   max-width: 100%;
   margin-top: 1rem;
@@ -467,9 +485,9 @@ body {
 .project-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   text-align: center;
-  padding: 1.5rem;
+  padding: clamp(0.5rem, 2vw, 1rem);
   border: none;
   border-radius: 0.75rem;
   background: #fff;
@@ -484,7 +502,7 @@ body {
 
 .project-card__title {
   margin: 0 0 0.75rem;
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-size: clamp(1rem, 1.25vw, 1.1rem);
   font-weight: 450;
   color: var(--color-text);
   white-space: pre-line;
@@ -500,17 +518,6 @@ body {
   text-decoration: underline;
 }
 
-.project-card__abstract {
-  margin: 0;
-  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
-  color: var(--color-text);
-  opacity: 0.85;
-  line-height: 1.5;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
 .project-detail {
   width: 100%;
   max-width: 68.75rem;
@@ -524,7 +531,8 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  min-height: clamp(1rem, 5vw, 2.5rem);
   width: 100%;
   margin-top: 1rem;
 }
@@ -534,19 +542,29 @@ body {
   top: 0;
   left: 0;
   white-space: nowrap;
-  padding: 0.5rem 0;
-  background: none;
+  text-decoration: none;
+  background: #6c757d;  
+  color: #ffffff;
+  padding: 0.625rem 1rem;
+  border-radius: 0.75rem;
   border: none;
-  color: var(--color-primary);
   cursor: pointer;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
   font-weight: 450;
+  line-height: 1;
+  height: clamp(1rem, 5vw, 2.5rem);  
+  display: inline-flex;
+  align-items: center;
+}
+
+.project-detail__back:hover {
+  background: #5a6268;  
 }
 
 .project-detail__title {
   margin: 0;
   text-align: center;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.3rem, 2vw, 2rem);
   font-weight: 600;
   color: var(--color-text);
   white-space: pre-line;
@@ -571,12 +589,12 @@ body {
   text-decoration: none;
   background: var(--color-primary);
   color: #ffffff;
-  padding: 0.625rem 1rem;
+  padding: 0rem clamp(0.5rem, 1vw, 1rem);
   border-radius: 0.75rem;
   font-size: clamp(0.85rem, 1.5vw, 1rem);
   font-weight: 450;
   line-height: 1;
-  height: 2.875rem;
+  height: clamp(1rem, 5vw, 2.5rem);
   display: inline-flex;
   align-items: center;
 }
@@ -589,16 +607,6 @@ body {
   text-decoration: underline;
 }
 
-.project-detail__abstract {
-  width: 100%;
-  margin: 0 0 2rem;
-  padding: 0 1rem;
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
-  line-height: 1.6;
-  color: var(--color-text);
-  text-align: left;
-}
-
 .project-detail__book {
   width: 100%;
   margin-top: 1rem;
@@ -607,7 +615,6 @@ body {
 .project-pdf__container {
   display: flex;
   justify-content: center;
-  padding: 1rem 0;
   width: 100%;
   margin: 0 auto;
 }
@@ -622,20 +629,6 @@ body {
   background: #fff;
 }
 
-/* LaTeX */
-.latex-inline {
-  margin: 0 0.1em;
-}
-
-.latex-display {
-  display: block;
-  margin: 0.75em 0;
-  overflow-x: auto;
-}
-
-.project-detail__abstract .latex-text {
-  display: block;
-}
 
 /* Mobile breakpoints */
 @media (max-width: 768px) {
@@ -672,18 +665,4 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .project-detail__header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .project-detail__back,
-  .project-detail__download {
-    position: static;
-    margin-bottom: 1rem;
-  }
-
-  .project-detail__title {
-    text-align: left;
-  }
 }

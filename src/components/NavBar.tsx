@@ -35,7 +35,7 @@ export const NavBar = ({ onNavigate, activeSection }: NavBarProps): ReactElement
             href={`#${item.id}`}
             onClick={(e) => {
               e.preventDefault();
-              onNavigate(item.id); // Parent will update URL
+              onNavigate(item.id);
             }}
           >
             {item.label}
@@ -43,19 +43,30 @@ export const NavBar = ({ onNavigate, activeSection }: NavBarProps): ReactElement
         ))}
       </nav>
 
-      {/* LinkedIn icon link */}
+      {/* CV and LinkedIn Icon */}
       <div className="nav__right">
-        {/* Showcase CV button - navigates to CV section */}
-        <a
-          className={`nav__cta${activeSection === "cv" ? " nav__cta--active" : ""}`}
-          href="#cv"
-          onClick={(e) => {
-            e.preventDefault();
-            onNavigate("cv");
-          }}
-        >
-          Show CV
-        </a>
+        {}
+        {activeSection === "cv" ? (
+          <a
+            className="nav__cta nav__cta--active"
+            href="CV_Max_Andersson_.pdf"
+            download
+          >
+            Download CV
+          </a>
+        ) : (
+          <a
+            className="nav__cta"
+            href="#cv"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate("cv");
+            }}
+          >
+            Showcase CV
+          </a>
+        )}
+
         <a
           className="nav__linkedin"
           href="https://www.linkedin.com/in/maxandersson314/"

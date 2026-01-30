@@ -25,19 +25,11 @@ const App = (): ReactElement => {
   const aboutRole = "Software and Machine Learning Engineer";
   const aboutBody = [
     `
-    Building innovative, efficient, high-performance software solutions! 
+    Building innovative, efficient, high-performance software solutions!
 
     Currently developing DAQ systems and end-to-end analysis pipelines at CERN, focusing on scalability, optimisation and automation. Always happy to connect!   
     `].join(" ");
     
-    
-  //   """I am a software and machine learning engineer with a passion for building scalable and efficient systems.
-  //   d
-  //   """
-  //   "I am currently working as a software engineer at",
-  // ].join(" ");
-
-  const [aboutShouldFade, setAboutShouldFade] = useState<boolean>(true);
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
@@ -47,7 +39,6 @@ const App = (): ReactElement => {
         : "about";
 
     setActiveSection(section);
-    if (section !== "about") setAboutShouldFade(false);
     if (section === "portfolio") setSelectedLocationId(null);
     if (section === "projects") setSelectedProjectId(null);
 
@@ -62,7 +53,6 @@ const App = (): ReactElement => {
           : "about";
 
       setActiveSection(newSection);
-      if (newSection !== "about") setAboutShouldFade(false);
       if (newSection === "portfolio") setSelectedLocationId(null);
       if (newSection === "projects") setSelectedProjectId(null);
     };
@@ -76,7 +66,6 @@ const App = (): ReactElement => {
   ): void => {
     setActiveSection(section);
     window.location.hash = section;
-    if (section !== "about") setAboutShouldFade(false);
     if (section === "portfolio") setSelectedLocationId(null);
     if (section === "projects") setSelectedProjectId(null);
   };
@@ -96,10 +85,10 @@ const App = (): ReactElement => {
         {activeSection === "about" && (
           <section id="about" className="section section--centered">
             <p className="about">
-              <span className={`about-text${aboutShouldFade ? " about-fade about-fade--1" : ""}`}>{aboutIntro}</span>
-              <span className={`about-name${aboutShouldFade ? " about-fade about-fade--2" : ""}`}>{aboutName}</span>
-              <span className={`about-title${aboutShouldFade ? " about-fade about-fade--2" : ""}`}>{aboutRole}</span>
-              <span className={`about-text${aboutShouldFade ? " about-fade about-fade--3" : ""}`}>{aboutBody}</span>
+              <span className="about-text about-fade about-fade--1">{aboutIntro}</span>
+              <span className="about-name about-fade about-fade--2">{aboutName}</span>
+              <span className="about-title about-fade about-fade--2">{aboutRole}</span>
+              <span className="about-text about-fade about-fade--3">{aboutBody}</span>
             </p>
           </section>
         )}
@@ -154,15 +143,6 @@ const App = (): ReactElement => {
                 src="CV_Max_Andersson_.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
                 title="CV PDF"
               />
-            </div>
-            <div className="cv__download-container">
-              <a
-                className="cv__download-btn"
-                href="CV_Max_Andersson_.pdf"
-                download
-              >
-                Download CV
-              </a>
             </div>
           </section>
         )}

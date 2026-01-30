@@ -4,7 +4,7 @@ export const projects: Project[] = [
     {
         id: "master-thesis",
         title: "Master's Thesis\n",
-        subtitle: "Radiation Hardness and Annealing Studies of Double Irradiated Silicon Diodes Produced on 8-inch Wafers for CMS HGCAL",
+        subtitle: "Annealing and Radiation Hardness Studies of p-type Silicon Diodes for CMS HGCAL under HL-LHC Fluence and Annealing Conditions",
         abstract: "",
         pdfPath: "projects/Master_Thesis_HGCAL_DI.pdf",
         publicationUrl: "https://example.com/master-thesis",
